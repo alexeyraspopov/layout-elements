@@ -1,0 +1,12 @@
+{
+  "name": "stack-layout",
+  "version": "0.0.1",
+  "module": "index.js",
+  "files": [
+    "index.js",
+    "style.css"
+  ],
+  "peerDependencies": {
+    "react": "^16.8.0"
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stack Layout</title>
+    <link rel="stylesheet" href="style.css" />
+    <style media="screen">
+      :root {
+        font-size: 12px;
+        font-family: monospace;
+      }
+      main {
+        max-width: 720px;
+        background: hsla(207, 50%, 50%, 0.1);
+      }
+      div {
+        padding: 0.85em;
+        background: hsla(207, 50%, 50%, 0.15);
+        box-sizing: border-box;
+      }
+      div:hover {
+        background: hsla(207, 50%, 50%, 0.25);
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="stack stack-vertical" style="--stack-spacing: 0.5em">
+      <h2>horizontal stack</h2>
+      <section class="stack stack-horizontal stack-start">
+        <div>box 1 start</div>
+        <div>box 2 start</div>
+        <div>box 3 start</div>
+      </section>
+      <section class="stack stack-horizontal stack-center">
+        <div>box 1 center</div>
+        <div>box 2 center</div>
+        <div>box 3 center</div>
+      </section>
+      <section class="stack stack-horizontal stack-end">
+        <div>box 1 end</div>
+        <div>box 2 end</div>
+        <div>box 3 end</div>
+      </section>
+      <section class="stack stack-horizontal stack-stretch">
+        <div>box 1 stretch</div>
+        <div>box 2 stretch</div>
+        <div>box 3 stretch</div>
+      </section>
+      <h2>vertical stack</h2>
+      <section class="stack stack-vertical stack-start">
+        <div>box 1 start</div>
+        <div>box 2 start</div>
+        <div>box 3 start</div>
+      </section>
+      <section class="stack stack-vertical stack-center">
+        <div>box 1 center</div>
+        <div>box 2 center</div>
+        <div>box 3 center</div>
+      </section>
+      <section class="stack stack-vertical stack-end">
+        <div>box 1 end</div>
+        <div>box 2 end</div>
+        <div>box 3 end</div>
+      </section>
+      <section class="stack stack-vertical stack-stretch">
+        <div>box 1 stretch</div>
+        <div>box 2 stretch</div>
+        <div>box 3 stretch</div>
+      </section>
+    </main>
+  </body>
+</html>
