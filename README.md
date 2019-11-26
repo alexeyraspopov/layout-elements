@@ -1,6 +1,9 @@
 # stack-layout
 
-Layout primitive that abstracts flexbox in order to define the layout for children components.
+    npm install @alexeyraspopov/stack-layout
+
+Layout primitive that abstracts flexbox in order to define the layout for
+children components. See demo: https://alexeyraspopov.github.io/stack-layout/.
 
 ## Requirements
 
