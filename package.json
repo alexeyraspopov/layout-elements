@@ -1,5 +1,5 @@
 {
-  "name": "stack-layout",
+  "name": "@alexeyraspopov/stack-layout",
   "version": "0.0.1",
   "module": "index.js",
   "files": [

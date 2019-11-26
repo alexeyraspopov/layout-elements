@@ -18,7 +18,7 @@ Abstraction on top of Flexbox for linear collections. No need to figure out
 
 ```javascript
 import React from 'react';
-import Stack from 'stack-layout';
+import Stack from '@alexeyraspopov/stack-layout';
 
 function MyDataList({ items }) {
   return (
@@ -34,5 +34,5 @@ function MyDataList({ items }) {
 Make sure related stylesheet is bundled as well:
 
 ```css
-@import url('stack-layout/style.css');
+@import url('@alexeyraspopov/stack-layout/style.css');
 ```
