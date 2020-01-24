@@ -9,25 +9,25 @@
   flex-direction: column;
 }
 .stack-vertical.stack-start {
-  align-items: start;
+  align-items: flex-start;
 }
 .stack-vertical.stack-center {
   align-items: center;
 }
 .stack-vertical.stack-end {
-  align-items: end;
+  align-items: flex-end;
 }
 .stack-vertical.stack-stretch {
   align-items: stretch;
 }
 .stack-horizontal.stack-start {
-  justify-content: start;
+  justify-content: flex-start;
 }
 .stack-horizontal.stack-center {
   justify-content: center;
 }
 .stack-horizontal.stack-end {
-  justify-content: end;
+  justify-content: flex-end;
 }
 .stack-horizontal.stack-stretch > * {
   flex: 1;
