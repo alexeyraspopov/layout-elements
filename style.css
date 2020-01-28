@@ -4,9 +4,11 @@
 }
 .stack-horizontal {
   flex-direction: row;
+  column-gap: var(--stack-spacing);
 }
 .stack-vertical {
   flex-direction: column;
+  row-gap: var(--stack-spacing);
 }
 .stack-vertical.stack-start {
   align-items: flex-start;
@@ -32,20 +34,9 @@
 .stack-horizontal.stack-stretch > * {
   flex: 1;
 }
-
-@supports (gap: 1px) {
-  .stack-horizontal {
-    column-gap: var(--stack-spacing);
-  }
-  .stack-vertical {
-    row-gap: var(--stack-spacing);
-  }
+.stack-horizontal.stack-fallback > * + * {
+  margin: 0 0 0 var(--stack-spacing);
 }
-@supports not (gap: 1px) {
-  .stack-horizontal > * + * {
-    margin: 0 0 0 var(--stack-spacing);
-  }
-  .stack-vertical > * + * {
-    margin: var(--stack-spacing) 0 0 0;
-  }
+.stack-vertical.stack-fallback > * + * {
+  margin: var(--stack-spacing) 0 0 0;
 }
