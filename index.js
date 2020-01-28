@@ -1,6 +1,6 @@
 import React from 'react';
 
-let reserved = ['as', 'direction', 'alignment', 'spacing', 'style', 'children'];
+let reserved = ['as', 'direction', 'alignment', 'spacing', 'style', 'className'];
 
 /**
  * @param props.as
@@ -12,12 +12,15 @@ let Stack = React.forwardRef((props, ref) => {
   let element = props.as || 'div';
   let spacing = getSpacing(props.spacing);
   let style = Object.assign({ '--stack-spacing': spacing }, props.style);
-  let direction = getDirection(props.direction);
-  let alignment = getAlignment(props.alignment);
-  let fallback = isFlexGapSupported() || 'stack-fallback';
-  let className = composeClassName('stack', direction, alignment, fallback, props.className);
+  let className = [
+    'stack',
+    getDirection(props.direction),
+    getAlignment(props.alignment),
+    isFlexGapSupported() || 'stack-fallback',
+    props.className,
+  ].filter(Boolean).join(' ');
   let fullProps = Object.assign({ ref, className, style }, omit(props, reserved));
-  return React.createElement(element, fullProps, ...props.children);
+  return React.createElement(element, fullProps);
 });
 
 function getSpacing(spacing, defaults) {
@@ -55,10 +58,6 @@ function getAlignment(alignment, defaults) {
     default:
       return 'stack-stretch';
   }
-}
-
-function composeClassName(...classes) {
-  return classes.filter(Boolean).join(' ');
 }
 
 function omit(source, excluded) {
