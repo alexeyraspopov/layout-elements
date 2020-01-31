@@ -15,7 +15,7 @@ let Stack = React.forwardRef((props, ref) => {
     'stack',
     getDirection(props.direction),
     getAlignment(props.alignment),
-    isFlexGapSupported() ? 'stack-fallback' : null,
+    isFlexGapSupported() ? null : 'stack-fallback',
     props.className,
   ].filter(Boolean).join(' ');
   let fullProps = Object.assign({ ref, className, style }, omit(props, reserved));
