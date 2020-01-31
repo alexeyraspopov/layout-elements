@@ -1,6 +1,6 @@
 {
   "name": "@alexeyraspopov/stack-layout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "module": "index.js",
   "files": [
     "index.js",
