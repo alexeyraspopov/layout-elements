@@ -83,4 +83,4 @@ function isFlexGapSupported() {
   return isSupported;
 }
 
-export default Stack;
+export default React.memo(Stack);
