@@ -9,7 +9,6 @@ let reserved = ['as', 'direction', 'alignment', 'spacing', 'style', 'className']
  * @param props.spacing
  */
 let Stack = React.forwardRef((props, ref) => {
-  let element = props.as || 'div';
   let spacing = getSpacing(props.spacing);
   let style = Object.assign({ '--stack-spacing': spacing }, props.style);
   let className = [
@@ -20,8 +19,15 @@ let Stack = React.forwardRef((props, ref) => {
     props.className,
   ].filter(Boolean).join(' ');
   let fullProps = Object.assign({ ref, className, style }, omit(props, reserved));
-  return React.createElement(element, fullProps);
+  return React.createElement(props.as, fullProps);
 });
+
+Stack.defaultProps = {
+  as: 'div',
+  direction: 'vertical',
+  alignment: 'stretch',
+  spacing: 0,
+};
 
 function getSpacing(spacing, defaults) {
   switch (typeof spacing) {
@@ -29,8 +35,6 @@ function getSpacing(spacing, defaults) {
       return spacing + 'em';
     case 'string':
       return spacing;
-    default:
-      return 0;
   }
 }
 
@@ -40,8 +44,6 @@ function getDirection(direction, defaults) {
       return 'stack-vertical';
     case 'horizontal':
       return 'stack-horizontal';
-    default:
-      return 'stack-vertical';
   }
 }
 
@@ -54,8 +56,6 @@ function getAlignment(alignment, defaults) {
     case 'end':
       return 'stack-end';
     case 'stretch':
-      return 'stack-stretch';
-    default:
       return 'stack-stretch';
   }
 }
