@@ -1,21 +1,17 @@
 import React from 'react';
+import { isFlexGapSupported } from './isFlexGapSupported';
 
 let reserved = ['as', 'direction', 'alignment', 'spacing', 'style', 'className'];
 
-/**
- * @param props.as
- * @param props.direction
- * @param props.alignment
- * @param props.spacing
- */
 let Stack = React.forwardRef((props, ref) => {
+  let isGapSupported = isFlexGapSupported();
   let spacing = getSpacing(props.spacing);
   let style = Object.assign({ '--stack-spacing': spacing }, props.style);
   let className = [
     'stack',
     getDirection(props.direction),
     getAlignment(props.alignment),
-    isFlexGapSupported() ? null : 'stack-fallback',
+    isGapSupported ? null : 'stack-fallback',
     props.className,
   ].filter(Boolean).join(' ');
   let fullProps = Object.assign({ ref, className, style }, omit(props, reserved));
@@ -67,20 +63,6 @@ function omit(source, excluded) {
     result[key] = source[key];
   }
   return result;
-}
-
-let memoized = null;
-function isFlexGapSupported() {
-  if (memoized != null) return memoized;
-  let container = document.createElement('div');
-  container.style.cssText = 'display: flex; flex-direction: column; gap: 1px';
-  container.appendChild(document.createElement('div'));
-  container.appendChild(document.createElement('div'));
-  document.body.appendChild(container);
-  let isSupported = container.scrollHeight === 1;
-  document.body.removeChild(container);
-  memoized = isSupported;
-  return isSupported;
 }
 
 export default React.memo(Stack);
