@@ -1,0 +1,10 @@
+// @flow
+import React from 'react';
+
+declare export default var Stack: React$ComponentType<{|
+  as?: React$ComponentType,
+  direction?: 'vertical' | 'horizontal',
+  alignment?: 'start' | 'center' | 'end' | 'stretch',
+  spacing?: number | string,
+  children: React$Node,
+|}>;
