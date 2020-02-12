@@ -1,10 +1,11 @@
 // @flow
 import React from 'react';
 
-declare export default var Stack: React$ComponentType<{|
-  as?: React$ComponentType,
+declare export default React$ComponentType<{
+  as?: React$ElementType,
   direction?: 'vertical' | 'horizontal',
   alignment?: 'start' | 'center' | 'end' | 'stretch',
   spacing?: number | string,
   children: React$Node,
-|}>;
+  ...
+}>;
