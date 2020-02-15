@@ -1,6 +1,9 @@
 {
   "name": "@alexeyraspopov/stack-layout",
+  "description": "Layout primitives",
   "version": "0.0.6",
+  "license": "MIT",
+  "repository": "alexeyraspopov/stack-layout",
   "main": "build/bundle.js",
   "module": "build/module.js",
   "files": [
