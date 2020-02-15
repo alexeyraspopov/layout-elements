@@ -7,10 +7,7 @@ children components. See demo: https://alexeyraspopov.github.io/stack-layout/.
 
 ## Requirements
 
-This package relies on or makes use of
-
-- [CSS Variables (Custom Properties)](https://caniuse.com/#feat=css-variables)
-- [ECMAScript 2015](https://kangax.github.io/compat-table/es6/)
+This package relies on and makes use of [CSS Variables (Custom Properties)](https://caniuse.com/#feat=css-variables) in runtime.
 
 ## Rationale
 
