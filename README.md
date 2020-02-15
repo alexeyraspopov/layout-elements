@@ -39,3 +39,8 @@ Make sure related stylesheet is bundled as well:
 ```css
 @import url('@alexeyraspopov/stack-layout/style.css');
 ```
+
+## Typings
+
+The library includes Flow and TypeScripts type definitions. Mostly aiming at
+correct props usage.
