@@ -1,10 +1,11 @@
 import babel from 'rollup-plugin-babel';
 import copy from 'rollup-plugin-copy';
 import bundleSize from 'rollup-plugin-bundle-size';
+import multiEntry from 'rollup-plugin-multi-entry';
 import autoExternal from 'rollup-plugin-auto-external';
 
 export default {
-  input: 'index.js',
+  input: 'modules/*.js',
   output: [
     { file: 'build/bundle.js', format: 'cjs' },
     { file: 'build/module.js', format: 'esm' },
@@ -18,6 +19,7 @@ export default {
       targets: [{ src: 'typings/*', dest: 'build' }],
     }),
     bundleSize(),
+    multiEntry(),
     autoExternal(),
   ],
 };
