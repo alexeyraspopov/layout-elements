@@ -10,6 +10,7 @@
     "build/*",
     "style.css"
   ],
+  "sideEffects": false,
   "scripts": {
     "build": "rollup --config ./rollup.config.js"
   },
