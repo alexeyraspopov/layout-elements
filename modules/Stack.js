@@ -1,9 +1,17 @@
 import React from 'react';
+import omit from './omit';
 import { isFlexGapSupported } from './isFlexGapSupported';
 
-let reserved = ['as', 'direction', 'alignment', 'spacing', 'style', 'className'];
+let reserved = [
+  'as',
+  'direction',
+  'alignment',
+  'spacing',
+  'style',
+  'className',
+];
 
-let Stack = React.forwardRef((props, ref) => {
+export let Stack = React.forwardRef((props, ref) => {
   let isGapSupported = isFlexGapSupported();
   let spacing = getSpacing(props.spacing);
   let style = Object.assign({ '--stack-spacing': spacing }, props.style);
@@ -13,8 +21,13 @@ let Stack = React.forwardRef((props, ref) => {
     getAlignment(props.alignment),
     isGapSupported ? null : 'stack-fallback',
     props.className,
-  ].filter(Boolean).join(' ');
-  let fullProps = Object.assign({ ref, className, style }, omit(props, reserved));
+  ]
+    .filter(Boolean)
+    .join(' ');
+  let fullProps = Object.assign(
+    { ref, className, style },
+    omit(props, reserved),
+  );
   return React.createElement(props.as, fullProps);
 });
 
@@ -55,14 +68,3 @@ function getAlignment(alignment, defaults) {
       return 'stack-stretch';
   }
 }
-
-function omit(source, excluded) {
-  let result = {};
-  for (let key of Object.keys(source)) {
-    if (excluded.indexOf(key) >= 0) continue;
-    result[key] = source[key];
-  }
-  return result;
-}
-
-export default React.memo(Stack);
