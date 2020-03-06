@@ -1,11 +1,18 @@
 // @flow
 import React from 'react';
 
-declare export default React$ComponentType<{
+declare export var Stack: React$ComponentType<{
   as?: React$ElementType,
   direction?: 'vertical' | 'horizontal',
   alignment?: 'start' | 'center' | 'end' | 'stretch',
   spacing?: number | string,
+  children: React$Node,
+  ...
+}>;
+
+declare export var Scene: React$ComponentType<{
+  as?: React$ElementType,
+  aspectRatio?: number,
   children: React$Node,
   ...
 }>;

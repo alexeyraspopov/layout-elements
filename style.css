@@ -40,3 +40,24 @@
 .stack-vertical.stack-fallback > * + * {
   margin: var(--stack-spacing) 0 0 0;
 }
+
+.scene {
+  position: relative;
+}
+.scene::before {
+  content: '';
+  float: left;
+  padding-top: calc(100% / (var(--scene-aspect-ratio)));
+}
+.scene::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.scene-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
