@@ -1,7 +1,7 @@
 {
   "name": "layout-elements",
   "description": "Layout primitives",
-  "version": "0.0.6",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": "alexeyraspopov/layout-elements",
   "main": "build/bundle.js",
