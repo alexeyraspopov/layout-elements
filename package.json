@@ -1,9 +1,9 @@
 {
-  "name": "@alexeyraspopov/stack-layout",
+  "name": "layout-elements",
   "description": "Layout primitives",
   "version": "0.0.6",
   "license": "MIT",
-  "repository": "alexeyraspopov/stack-layout",
+  "repository": "alexeyraspopov/layout-elements",
   "main": "build/bundle.js",
   "module": "build/module.js",
   "files": [

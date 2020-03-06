@@ -1,9 +1,6 @@
-# stack-layout
+# layout-elements
 
-    npm install @alexeyraspopov/stack-layout
-
-Layout primitive that abstracts flexbox in order to define the layout for
-children components. See demo: https://alexeyraspopov.github.io/stack-layout/.
+    npm install layout-elements
 
 ## Requirements
 
@@ -14,11 +11,11 @@ This package relies on and makes use of [CSS Variables (Custom Properties)](http
 Abstraction on top of Flexbox for linear collections. No need to figure out
 `justify-content`/`align-items` values, etc.
 
-## Usage with React
+## Usage
 
 ```javascript
 import React from 'react';
-import Stack from '@alexeyraspopov/stack-layout';
+import { Stack } from 'layout-elements';
 
 function MyDataList({ items }) {
   return (
@@ -31,10 +28,23 @@ function MyDataList({ items }) {
 }
 ```
 
+```javascript
+import React from 'react';
+import { Scene } from 'layout-elements';
+
+function MyDataVis() {
+  return (
+    <Scene aspectRatio={16 / 9} preserve>
+      <svg>...</svg>
+    </Scene>
+  );
+}
+```
+
 Make sure related stylesheet is bundled as well:
 
 ```css
-@import url('@alexeyraspopov/stack-layout/style.css');
+@import url('layout-elements/style.css');
 ```
 
 ## Typings
