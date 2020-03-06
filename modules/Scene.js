@@ -1,7 +1,7 @@
 import React from 'react';
 import omit from './omit';
 
-let reserved = ['as', 'aspectRatio', 'preserve'];
+let reserved = ['as', 'aspectRatio', 'preserve', 'children'];
 
 export let Scene = React.forwardRef((props, ref) => {
   let style = Object.assign(
@@ -14,12 +14,12 @@ export let Scene = React.forwardRef((props, ref) => {
         className: 'scene-content',
         children: props.children,
       })
-    : children;
+    : props.children;
   let fullProps = Object.assign(
-    { ref, className, style, children },
+    { ref, className, style },
     omit(props, reserved),
   );
-  return React.createElement(props.as, fullProps);
+  return React.createElement(props.as, fullProps, children);
 });
 
 Scene.defaultProps = {
