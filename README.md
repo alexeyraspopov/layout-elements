@@ -8,8 +8,10 @@ This package relies on and makes use of [CSS Variables (Custom Properties)](http
 
 ## Rationale
 
-Abstraction on top of Flexbox for linear collections. No need to figure out
-`justify-content`/`align-items` values, etc.
+Stack: abstraction on top of Flexbox for linear collections. No need to figure
+out `justify-content`/`align-items` values, etc.
+
+Scene: a useful layer to force aspect ratio of an element.
 
 ## Usage
 
