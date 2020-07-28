@@ -1,7 +1,7 @@
 import React from 'react';
 import omit from './omit';
 
-let reserved = ['as', 'aspectRatio', 'preserve', 'children'];
+let reserved = ['as', 'aspectRatio', 'preserve', 'children', 'className'];
 
 export let Scene = React.forwardRef((props, ref) => {
   let style = Object.assign(
